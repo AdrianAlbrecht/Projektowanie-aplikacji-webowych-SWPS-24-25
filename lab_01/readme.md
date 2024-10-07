@@ -6,7 +6,7 @@
 
 # 1. Warto zacząć od...
 
-1.1 Zanim rozpoczniesz przygotowanie swojego pierwszego projektu z użyciem Django 4.1 rzuć okiem na release notes dla tej wersji: https://docs.djangoproject.com/pl/4.1/releases/4.1/
+1.1 Zanim rozpoczniesz przygotowanie swojego pierwszego projektu z użyciem Django 4.2 rzuć okiem na release notes dla tej wersji: https://docs.djangoproject.com/pl/4.2/releases/4.2/
 
 1.2 Jeżeli Twoja wiedza na temat działania protokołu HTTP wymaga odświeżenia to polecam dobry artykuł na ten temat: https://www.samouczekprogramisty.pl/protokol-http/
 
