@@ -1,4 +1,4 @@
-# Aplikacje WWW, semestr 2024Z gr 3
+# Aplikacje WWW, semestr 2024Z
 
 ## Lab 2 - narzędzie git
 ---
