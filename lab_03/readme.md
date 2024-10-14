@@ -18,100 +18,20 @@ Istnieje również dość ryzykowna opcja polegająca na stworzeniu oddzielnych 
 
 Aby podłączyć bazę danych MySQL do projektu Django, należy wykonać kilka kroków, w tym instalację odpowiedniego sterownika, konfigurację projektu Django oraz utworzenie bazy danych.
 
-### Krok 1: Zainstaluj MySQL
+Zalecane jest korzystać z bazy danych SQLite, gdyż nie będzie sprawiać to problemów w trakcie prezentacji projektu na zaliczenie.
 
-1. **Pobierz i zainstaluj MySQL** z oficjalnej strony [MySQL](https://dev.mysql.com/downloads/).
-2. **Utwórz nowego użytkownika i bazę danych** w MySQL, aby używać ich w projekcie Django.
+Poniższa operacja stworzy schematy dla wszystkich zainstalowanych aplikacji (zmienna `INSTALLED_APPS` w pliku `settings.py`). Jeżeli nie są niezbędne to można wybrane linie zakomentować lub dodać na końcu polecenia nazwy aplikacji, dla których chcemy stworzyć schemat.
 
-### Krok 2: Zainstaluj MySQL Client dla Pythona
-
-Aby Django mógł komunikować się z bazą danych MySQL, potrzebujesz zainstalować odpowiedni pakiet. Użyj `mysqlclient`, który jest popularnym wyborem:
-
-```bash
-pip install mysqlclient
-```
-
-**Alternatywa:** Możesz także użyć `PyMySQL`. Aby zainstalować, użyj:
-
-```bash
-pip install PyMySQL
-```
-
-Jeśli zdecydujesz się na `PyMySQL`, dodaj poniższy kod do swojego pliku `__init__.py` w katalogu głównym projektu, aby zarejestrować ten moduł jako sterownik MySQL:
-
-```python
-import pymysql
-pymysql.install_as_MySQLdb()
-```
-
-### Krok 3: Skonfiguruj bazę danych w projekcie Django
-
-1. **Otwórz plik `settings.py`** w katalogu swojego projektu Django.
-2. **Znajdź sekcję `DATABASES`** i zmodyfikuj ją, aby wyglądała tak:
-
-```python
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'nazwa_bazy_danych',  # zamień na nazwę swojej bazy danych
-        'USER': 'twoja_nazwa_uzytkownika',  # zamień na nazwę użytkownika
-        'PASSWORD': 'twoje_haslo',  # zamień na hasło
-        'HOST': 'localhost',  # zazwyczaj 'localhost'
-        'PORT': '3306',  # domyślny port MySQL
-    }
-}
-```
-
-### Krok 4: Utwórz bazę danych w MySQL
-
-Zalecana jest praca na MySQLWorkbench, ale jeśli ktokolwiek ma chęć pracować w terminalu to przydadzą się takie komendy:
-
-1. **Zaloguj się do MySQL** przez terminal lub klienta MySQL:
-
-```bash
-mysql -u twoja_nazwa_uzytkownika -p
-```
-
-2. **Utwórz nową bazę danych**:
-
-```sql
-CREATE DATABASE nazwa_bazy_danych;
-```
-
-3. **Zakończ sesję**:
-
-```sql
-EXIT;
-```
-
-### Krok 5: Wykonaj migracje
-
-Po skonfigurowaniu połączenia z bazą danych, musisz wykonać migracje, aby utworzyć tabele w nowej bazie danych.
-
-1. W terminalu, w katalogu swojego projektu Django, uruchom:
-
-*Poniższa operacja stworzy schematy dla wszystkich zainstalowanych aplikacji (zmienna `INSTALLED_APPS` w pliku `settings.py`). Jeżeli nie są niezbędne to można wybrane linie zakomentować lub dodać na końcu polecenia nazwy aplikacji, dla których chcemy stworzyć schemat.*
-
-
-```bash
+```console
+# przygotowanie plików migracji
 python manage.py makemigrations
-```
 
-2. Następnie uruchom:
-
-```bash
+# wykonanie migracji
 python manage.py migrate
 ```
 
-Warto przeczytać dokumentację dotyczącą tego polecenia, gdyż posiada ciekawe opcje, dość często potrzebne w trakcie początkowej pracy z modelem bazy danych i częstymi migracjami: https://docs.djangoproject.com/pl/4.2/ref/django-admin/#migrate
+Warto przeczytać dokumentację dotyczącą tego polecenia, gdyż posiada ciekawe opcje, dość często potrzebne w trakcie początkowej pracy z modelem bazy danych i częstymi migracjami: https://docs.djangoproject.com/pl/4.1/ref/django-admin/#migrate
 
-### Krok 6: Sprawdź połączenie
-
-1. **Uruchom serwer deweloperski**, aby upewnić się, że wszystko działa poprawnie:
-
-```bash
-python manage.py runserver
-```
 
 **Stworzenie superużytkownika**
 
@@ -121,26 +41,8 @@ python manage.py createsuperuser
 
 Ten użytkownik jest niezbędny, aby możliwe było zalogowanie się do panelu administracyjnego i wykonywanie w nim czynności administracyjnych.
 
-2. **Zaloguj się do panelu administracyjnego**, jeśli utworzyłeś superużytkownika, aby sprawdzić, czy dane są poprawnie przechowywane:
-
-```bash
-http://127.0.0.1:8000/admin
-```
-
-Sprawdź dostępne w nim opcje na tym etapie tworzenia aplikacji.
-
-### Krok 7: Testuj
-
-1. **Dodaj dane do bazy danych** za pomocą panelu administracyjnego lub interfejsu Django.
-2. **Sprawdź, czy dane są przechowywane w bazie danych MySQL** używając MySQL Workbench, phpMyAdmin lub innego narzędzia do zarządzania bazą danych.
-
-### Dodatkowe uwagi:
-
-- Upewnij się, że masz zainstalowane wszystkie niezbędne biblioteki dla Pythona, aby uniknąć błędów.
-- W przypadku korzystania z `PyMySQL`, upewnij się, że Twój projekt Django ma dostęp do tego modułu przez dodanie odpowiedniego kodu w `__init__.py`.
-- Jeśli wystąpią jakiekolwiek problemy, sprawdź dokumentację Django oraz MySQL, aby uzyskać dodatkowe informacje na temat błędów.
-
-Teraz Twój projekt Django powinien być poprawnie połączony z bazą danych MySQL!
+Zaloguj się do panelu administracyjnego i sprawdź dostępne w nim opcje na tym etapie tworzenia aplikacji.
+Adres panelu przy domyślnych ustawieniach to: http://127.0.0.1:8000/admin
 
 ### 2. Schemat bazy danych.
 
@@ -198,9 +100,32 @@ class Person(models.Model):
         return self.name
 ```
 
-Po zdefiniowaniu modelu należy przygotować migracje poleceniem `manage.py makemigrations`, a nstępnie wykonać migrację poprzez `manage.py migrate`.
+Po zdefiniowaniu modelu należy dodać nasza aplikację do zmiennej `INSTALLED_APPS` w pliku `settings.py`:
+
+```python
+INSTALLED_APPS = [
+    'myapp.apps.MyappConfig',
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+]
+```
+
+przygotować migracje poleceniem `manage.py makemigrations`, a nstępnie wykonać migrację poprzez `manage.py migrate`.
 
 Wykonanie polecenia migracji powinno propagować powyższe modele na schemat domyślnej bazy danych zdefiniowanej w pliku `settings.py`.
+
+Warto zarejestrować od razu nasze modele w `admin.py` znajdującym się w folderze naszej aplikacji:
+
+```python
+from .models import Team, Person
+
+admin.site.register(Team)
+admin.site.register(Person)
+```
 
 **ZADANIA**
 
