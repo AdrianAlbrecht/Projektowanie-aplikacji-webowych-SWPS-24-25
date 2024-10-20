@@ -30,7 +30,7 @@ python manage.py makemigrations
 python manage.py migrate
 ```
 
-Warto przeczytać dokumentację dotyczącą tego polecenia, gdyż posiada ciekawe opcje, dość często potrzebne w trakcie początkowej pracy z modelem bazy danych i częstymi migracjami: https://docs.djangoproject.com/pl/4.1/ref/django-admin/#migrate
+Warto przeczytać dokumentację dotyczącą tego polecenia, gdyż posiada ciekawe opcje, dość często potrzebne w trakcie początkowej pracy z modelem bazy danych i częstymi migracjami: https://docs.djangoproject.com/pl/4.2/ref/django-admin/#migrate
 
 
 **Stworzenie superużytkownika**
@@ -64,7 +64,7 @@ manage.py inspectdb >> models.py
 ### 3. Modele w Django.
 
 
-> Dokumentacja: https://docs.djangoproject.com/pl/4.1/topics/db/models/
+> Dokumentacja: https://docs.djangoproject.com/pl/4.2/topics/db/models/
 
 Definicje modeli dodajemy w pliku `projekt/aplikacja/models.py`.
 
@@ -135,8 +135,8 @@ admin.site.register(Person)
 4. Przeanalizuj plik z kodem modeli i dodaj/zmodyfikuj jedno z pól modelu. Przygotuj plik migracji (`makemigrations`), a następnie wykonaj migrację i sprawdź czy zmiany zostały propagowane na bazę. Przejrzyj zawartość pliku migracji.
 5. Za pomocą polecenia `showmigrations` wylistuj wszystkie migracje dla danej aplikacji, a następnie sprawdzając w dokumentacji działanie polecenia `migrate` wycofaj ostatnią migrację.
 6. Zainstaluj pakiet `django-debug-toolbar` i skonfiguruj go.
-7. Posługując się przykładem z [oficjalnego tutoriala numer 2](https://docs.djangoproject.com/pl/4.1/intro/tutorial02/) dodaj jeden model do panelu administracyjnego i przetestuj dodanie, modyfikację i usunięcie instancji tego modelu. Sprawdzaj zawartość w panelu django debug toolbar za każdym razem.
-8. Ponownie w tutorialu https://docs.djangoproject.com/pl/4.1/intro/tutorial02/ przeanalizuj przykłady z wykorzystaniem django shell i wykonaj analogiczny przykład (import modułów, modelu, utworzenie instancji, itd.) wykorzystując jeden z utworzonych modeli z listingu 1.
+7. Posługując się przykładem z [oficjalnego tutoriala numer 2](https://docs.djangoproject.com/pl/4.2/intro/tutorial02/) dodaj jeden model do panelu administracyjnego i przetestuj dodanie, modyfikację i usunięcie instancji tego modelu. Sprawdzaj zawartość w panelu django debug toolbar za każdym razem.
+8. Ponownie w tutorialu https://docs.djangoproject.com/pl/4.2/intro/tutorial02/ przeanalizuj przykłady z wykorzystaniem django shell i wykonaj analogiczny przykład (import modułów, modelu, utworzenie instancji, itd.) wykorzystując jeden z utworzonych modeli z listingu 1.
 9. Zapisz zmiany w repozytorium i jeżeli jest to wymagane wyślij informacje o dodaktowym repozytorium dla prowadzącego zajęcia.
 
 
