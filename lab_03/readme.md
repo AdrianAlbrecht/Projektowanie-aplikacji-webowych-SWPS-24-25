@@ -3,6 +3,8 @@
 ## Lab 3
 ---
 
+Jeżeli nadal masz problemy z gitem, zerknij tutaj: https://learngitbranching.js.org/?locale=pl
+
 ### **1. Narzędzia administracyjne frameworka Django.**
 
 Django posiada narzędzie administracyjne w postaci skryptu `manage.py` oraz polecenia `django-admin` dzięki którym możemy wykonać wiele czynności administracyjnych, takich jak dodanie użytkownika administracyjnego, wykonanie migracji bazy danych, uruchomienie serwera i inne. Pełną listę poleceń można znaleźć w oficjalnej dokumentacji pod adresem: https://docs.djangoproject.com/pl/4.2/ref/django-admin/
