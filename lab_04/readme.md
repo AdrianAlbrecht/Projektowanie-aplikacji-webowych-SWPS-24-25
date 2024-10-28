@@ -230,6 +230,11 @@ Atrybuty modeli w Django definiują różne aspekty zachowania pól i modeli w i
          email = models.EmailField(blank=True)
      ```
 
+#### Jaka jest różnica?
+
+![Tu powinien być obrazek :)](./blank_vs_null.png)
+
+
 ### 3. **`default`**
    - Ustala domyślną wartość dla pola, jeśli użytkownik jej nie poda.
    - **Typ pól**: Wszystkie pola.
