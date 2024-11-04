@@ -456,7 +456,7 @@ Znajdź w dokumentacji modułu admin możliwość ustawienia danego pola modelu 
 Z dokumentacji typów wyliczeniowych https://docs.djangoproject.com/en/4.2/ref/models/fields/#enumeration-types wykorzystaj klasę `models.IntegerChoices` i zmień deklarację pola `plec`, jeżeli użyłeś/-aś innej metody.
 
 **Zadanie 5**  
-Dodaj nowe modele do panelu admina. Użyj panelu admina, żeby dodać nowe obiekty danych modeli. Co trzeba zrobić gdy tworzymy obeikt z modelu, który wykorzytsuje klucz obcy?
+Dodaj nowe modele do panelu admina. Użyj panelu admina, żeby dodać nowe obiekty danych modeli. Co trzeba zrobić gdy tworzymy obiekt z modelu, który wykorzytsuje klucz obcy?
 
 **Zadanie 6**  
 PROJEKT Zastanów się jak zmodyfikować (albo dodać) modele w swoim projekcie. Zatanów się nad atrybutami.
