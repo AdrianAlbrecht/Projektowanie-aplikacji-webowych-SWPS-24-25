@@ -431,11 +431,11 @@ A następnie importujemy ją w widokach i zamieniamy nazwę `TokenAuthentication
 
 2. Poprzez wyłączenie w Postmanie autoryzacji (*Type: No Auth*):
 
-![](postman_token_auth_1.png)
+![](postman_token_auth_1.PNG)
 
  a następnie ręczne dodanie nagłówka `Authorization` z wartością `Token 9054f7aa9305e012b3c2300408c3dfdf390fcddf`:
 
-![](postman_token_auth_2.png)
+![](postman_token_auth_2.PNG)
 
 Dodatkowo, dla widoków (endpointów), które będą uwierzytelniane poprzez token nie możemy używać jednocześnie kontroli uprawnienia `IsAuthenticated`.
 
