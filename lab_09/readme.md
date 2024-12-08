@@ -1,4 +1,4 @@
-# projektowanie aplikacji webowych, semestr 2024Z
+# Projektowanie aplikacji webowych, semestr 2024Z
 
 ## Lab 9 - Autentykacja w Django i DRF.
 ---
